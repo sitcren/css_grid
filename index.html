@@ -19,7 +19,7 @@
         .pagina {
             display: grid;
             grid-template-columns: 200px 1fr;
-            grid-template-rows: 80px 1fr 60px;
+            grid-template-rows: 70px 1fr 60px;
             grid-template-areas:
                 "cabecalho cabecalho"
                 "navegacao conteudo"
@@ -30,8 +30,21 @@
         header {
             grid-area: cabecalho;
             border: 2px solid #d63384;
-            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+
+        .logo {
             font-size: 24px;
+            font-weight: bold;
+        }
+
+        header a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: black;
         }
 
         nav {
@@ -40,23 +53,17 @@
             padding: 20px;
         }
 
+        nav a {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: black;
+        }
+
         main {
             grid-area: conteudo;
             border: 2px solid #20a9bd;
             padding: 20px;
-        }
-
-        footer {
-            grid-area: rodape;
-            border: 2px solid #405de6;
-            padding: 15px;
-        }
-
-        nav a {
-            display: block;
-            margin-bottom: 15px;
-            text-decoration: none;
-            color: black;
         }
 
         form {
@@ -68,7 +75,8 @@
             margin-top: 10px;
         }
 
-        input, select {
+        input,
+        select {
             width: 100%;
             padding: 8px;
             margin-top: 5px;
@@ -77,6 +85,13 @@
         button {
             margin-top: 15px;
             padding: 10px 20px;
+        }
+
+        footer {
+            grid-area: rodape;
+            border: 2px solid #405de6;
+            text-align: center;
+            padding: 15px;
         }
 
         @media (max-width: 600px) {
@@ -88,6 +103,14 @@
                     "navegacao"
                     "conteudo"
                     "rodape";
+            }
+
+            header {
+                padding: 0 15px;
+            }
+
+            header a {
+                margin-left: 10px;
             }
 
             nav a {
@@ -104,17 +127,31 @@
 
         <!-- CABEÇALHO -->
         <header>
-            CABEÇALHO
+
+            <div class="logo">
+                LOGO
+            </div>
+
+            <div>
+                <a href="#">Home</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contact</a>
+            </div>
+
         </header>
+
 
         <!-- NAVEGAÇÃO -->
         <nav>
+
             <strong>NAVEGAÇÃO</strong>
 
             <a href="#">Início</a>
             <a href="#">Cadastro</a>
             <a href="#">Contacto</a>
+
         </nav>
+
 
         <!-- CONTEÚDO -->
         <main>
@@ -159,9 +196,10 @@
 
         </main>
 
+
         <!-- RODAPÉ -->
         <footer>
-            RODAPÉ
+            © 2026 - Página de Cadastro | Todos os direitos reservados.
         </footer>
 
     </div>
